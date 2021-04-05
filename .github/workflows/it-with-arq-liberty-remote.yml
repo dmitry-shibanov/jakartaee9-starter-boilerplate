@@ -43,7 +43,7 @@ jobs:
             JAVA_HOME = `dirname $JAVA_CMD`/..
           fi
           echo "JAVA_HOME: $JAVA_HOME"
-          sudo keytool -import -trustcacerts -keystore ${JAVA_HOME}/lib/security/cacerts -storepass changeit -alias testwlp -file testwlp.crt -noprompt
+          keytool -import -trustcacerts -keystore ${JAVA_HOME}/lib/security/cacerts -storepass changeit -alias testwlp -file testwlp.crt -noprompt
 
       - name: Run integration test with -Parq-liberty-remote
         run: mvn clean verify -Parq-liberty-remote
