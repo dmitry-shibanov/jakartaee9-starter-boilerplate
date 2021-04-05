@@ -12,7 +12,7 @@ jobs:
         uses: actions/setup-java@v2
         with:
           distribution: 'adopt'
-          java-version: 11.0.8
+          java-version: 11
 
       - name: Cache Maven packages
         uses: actions/cache@v2
@@ -42,7 +42,7 @@ jobs:
             JAVA_HOME = `dirname $JAVA_CMD`/..
           fi
           echo "JAVA_HOME: $JAVA_HOME"
-          keytool -import -trustcacerts -keystore ${JAVA_HOME}/lib/security/cacerts -storepass changeit -alias testwlp -file testwlp.crt -noprompt
+          sudo keytool -import -trustcacerts -keystore ${JAVA_HOME}/lib/security/cacerts -storepass changeit -alias testwlp -file testwlp.crt -noprompt
 
       - name: Run integration test with -Parq-liberty-remote
         run: mvn clean verify -Parq-liberty-remote
