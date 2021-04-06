@@ -15,7 +15,7 @@ jobs:
           java-version: 11
 
       - name: change permissions
-        run: sudo chmod -R g+x /usr/lib/jvm
+        run: sudo chmod -R 777 /usr/lib/jvm
 
       - name: Cache Maven packages
         uses: actions/cache@v2
