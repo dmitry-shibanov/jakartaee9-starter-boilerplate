@@ -15,7 +15,7 @@ jobs:
           java-version: 11
 
       - name: change permissions
-        run: sudo chmod -R 644 /usr/lib/jvm/adoptopenjdk-11-hotspot-amd64
+        run: sudo chmod -R g+x /usr/lib/jvm
 
       - name: Cache Maven packages
         uses: actions/cache@v2
