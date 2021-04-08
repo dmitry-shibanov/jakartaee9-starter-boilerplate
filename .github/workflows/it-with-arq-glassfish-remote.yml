@@ -1,16 +1,6 @@
 name: it-with-arq-glassfish-remote
 
-on:
-  push:
-    paths-ignore:
-      - "docs/**"
-    branches:
-      - master
-  pull_request:
-    types:
-      - opened
-      - synchronize
-      - reopened
+on: [push, pull_request]
 
 jobs:
   it-with-arq-glassfish-remote:
