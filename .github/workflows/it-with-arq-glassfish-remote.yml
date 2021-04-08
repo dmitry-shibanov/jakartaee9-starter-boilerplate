@@ -1,16 +1,6 @@
 name: it-with-arq-glassfish-remote
 
-on:
-  push:
-    paths-ignore:
-      - "docs/**"
-    branches:
-      - master
-  pull_request:
-    types:
-      - opened
-      - synchronize
-      - reopened
+on: [push, pull_request]
 
 jobs:
   it-with-arq-glassfish-remote:
@@ -24,6 +14,8 @@ jobs:
           #distribution: 'zulu'
           java-version: 11
           
+      - name: check version
+        run: java -version 
       - name: Run Glassfish server
         run: |
           export GLASSFISH_ARCHIVE=glassfish6
