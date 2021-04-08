@@ -15,7 +15,9 @@ jobs:
           java-version: 11
           
       - name: Check 
-        run: netstat -ao
+        run: |
+          netstat -ao
+          sudo lsof -i:4848
 
 #       - name: Cache Maven packages
 #         uses: actions/cache@v2
