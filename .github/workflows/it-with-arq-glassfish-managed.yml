@@ -16,7 +16,7 @@ jobs:
         uses: dmitry-shibanov/setup-java@v-dmshib/return-unpack
         with:
           distribution: 'zulu'
-          java-version: 11
+          java-version: 11.0.8
 #           distribution: 'jdkfile'
 #           jdkfile: zulu.tar.gz
 
